@@ -37,6 +37,10 @@
 
 #include <dev/usb/usb.h>
 
+#if HAVE_STRINGS_H
+#  include <strings.h>			/* For bzero() */
+#endif	/* HAVE_STRINGS_H */
+
 #if HAVE_LIBINTL_H
 #  include <libintl.h>		/* For i18n */
 #endif	/* HAVE_LIBINTL_H */
