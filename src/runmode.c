@@ -622,7 +622,7 @@ run_mode_Init(int argc, char *argv[])
 		struct dlp_setuserinfo uinfo;
 
 		/* Clear uinfo */
-		memset(&uinfo, sizeof(struct dlp_userinfo), 0x00);
+		memset(&uinfo, 0x00, sizeof(struct dlp_userinfo));
 
 		/* XXX - Set viewer ID? */
 
@@ -965,10 +965,7 @@ run_mode_List(int argc, char *argv[])
 int
 run_mode_Info(int argc, char *argv[])
 {
-	int err;
-
 	struct Palm *palm;
-
 
 	/* Connect to the Palm */
 	if ((palm = palm_Connect()) == NULL )
