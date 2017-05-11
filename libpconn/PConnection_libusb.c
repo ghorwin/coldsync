@@ -227,7 +227,7 @@ libusb_read(PConnection *p, unsigned char *buf, int len)
 			u->iobuflen = usb_bulk_read(u->dev, u->ep_in | 0x80,
 				(char *)u->iobufp, sizeof(u->iobuf), 5000);
 			IO_TRACE(5)
-				fprintf(stderr, "usb read %d, ret %d\n", sizeof(u->iobuf), u->iobuflen);
+				fprintf(stderr, "usb read %lu, ret %d\n", sizeof(u->iobuf), u->iobuflen);
 			if (u->iobuflen < 0) {
 				fprintf(stderr, "usb read: %s\n", usb_strerror());
 				return u->iobuflen;
