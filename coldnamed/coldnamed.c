@@ -167,7 +167,7 @@ syslog(LOG_DEBUG, "About to send back magic 0x%04x, type %d, unknown %d, hostid 
 	* (u_long *) (buf+8)	= htonl(wakeup_ack.netmask);
 	strncpy((char *) buf+12, wakeup_ack.hostname, DLPCMD_MAXHOSTNAMELEN-1);
 #endif	/* 0 */
-syslog(LOG_DEBUG, "About to sendto(%d)", 12+strlen(wakeup_ack.hostname)+1);
+syslog(LOG_DEBUG, "About to sendto(%lu)", 12+strlen(wakeup_ack.hostname)+1);
 
 /*	err = sendto(STDIN_FILENO, (const void *) buf, 12+strlen(wakeup_ack.hostname)+1, 0,
 		     (struct sockaddr *) &cliaddr,
