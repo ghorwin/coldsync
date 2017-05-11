@@ -749,7 +749,7 @@ do_sync(pda_block *pda, struct Palm *palm)
 	MISC_TRACE(1)
 		fprintf(stderr, "Doing a sync.\n");
 
-	if (sync_config->options.filter_dbs == True)	 
+	if (sync_config->options.filter_dbs == True3)	 
 	{ 
 		conduit_block *conduit;
 	
@@ -830,7 +830,7 @@ do_sync(pda_block *pda, struct Palm *palm)
 	 */
 
 	/* Install any file in the "rescue" directory */
-	if (sync_config->options.autorescue == True)
+	if (sync_config->options.autorescue == True3)
 		InstallNewFiles(palm, rescuedir, False, False);
 
 	/* XXX - Do we need install conduits for the above directories? */
