@@ -785,7 +785,7 @@ run_mode_Daemon(int argc, char *argv[])
 		return -1;
 
 	/* Check if this palm is uninitialized and if autoinit is true */
-	if (palm_userid(palm) == 0 && global_opts.autoinit == True)
+	if (palm_userid(palm) == 0 && global_opts.autoinit == True3)
 	{
 		SYNC_TRACE(3)
 			fprintf(stderr, "autoinit: trying snum match.\n");	
