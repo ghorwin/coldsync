@@ -1633,7 +1633,7 @@ find_in_path(const char *conduit)
 			} else {
 				/* Non-empty path component */
 				snprintf(buf, MAXPATHLEN, "%.*s/%s",
-					 colon-path, path,
+				    (int) (colon - path), path,
 					 conduit);
 			}
 			path = colon + 1;
@@ -2341,11 +2341,6 @@ crea_type_matches(const conduit_block *cond,
 		  const unsigned char flags)
 {
 	int i;
-	Bool retval;
-
-	retval = False;			/* Start by assuming that it
-					 * doesn't match.
-					 */
 
 	CONDUIT_TRACE(7)
 		fprintf(stderr, "crea_type_matches: "
